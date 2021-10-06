@@ -1,4 +1,29 @@
-<hello name="{{ name }}"></hello>
-<p>
-  Start editing to see some magic happen :)
-</p>
+<h1>Simple PDF Viewer</h1>
+
+<div>
+  <form [formGroup]="pdfForm" (ngSubmit)="onSubmit(pdfForm)">
+    <label>
+      Source:
+      <input
+        type="text"
+        formControlName="source"
+        placeholder="data url (base64)/resource utl"
+      />
+    </label>
+    <button type="submit">View Now</button>
+  </form>
+</div>
+
+<div>
+  <embed
+    *ngIf="pdfData"
+    #embedRef
+    style="
+    /* position:absolute; left: 0; top: 0; */
+    "
+    width="100%"
+    height="500px"
+    [src]="pdfData.source"
+    type="application/pdf"
+  />
+</div>

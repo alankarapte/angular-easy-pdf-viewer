@@ -15,8 +15,13 @@
   margin: 1.5rem auto 0 auto;
   width: fit-content;
   max-width: 100%;
+  padding-inline: 5rem;
   ul {
     font-size: 1.1rem;
+
+    & li {
+      overflow-wrap: break-word;
+    }
 
     & li em {
       font-weight: bold;
@@ -28,7 +33,7 @@
   & .form-box {
     display: flex;
     padding: 1.5rem;
-    gap: 0.5em;
+    gap: 1em;
 
     & input {
       flex: 1 1 auto;
@@ -43,7 +48,7 @@
       background-color: #232f62;
       color: #efe76b;
       font-weight: 600;
-      transition: 0.2s;
+      transition: background-color 0.2s;
       text-decoration: underline;
       text-underline-offset: 1px;
       text-decoration-thickness: 1px;
@@ -64,8 +69,13 @@
   }
 }
 
-@media screen and (max-width: 200px) {
-  .form-wrapper {
-    flex-wrap: wrap !important;
+@media screen and (max-width: 400px) {
+  .form-wrapper .form-box {
+    flex-wrap: wrap;
+    justify-content: center;
+
+    & input {
+      width: 100%;
+    }
   }
 }

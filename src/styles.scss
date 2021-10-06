@@ -14,3 +14,9 @@ html {
 body {
   background-color: #dfe6e9;
 }
+
+@media screen and (max-width: 320px) {
+  html {
+    font-size: 0.426rem;
+  }
+}

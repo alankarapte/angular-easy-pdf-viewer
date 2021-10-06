@@ -1,29 +1,32 @@
-<h1>Simple PDF Viewer</h1>
+<header class="header">
+  <h1>Simple PDF Viewer</h1>
+</header>
 
-<div>
-  <form [formGroup]="pdfForm" (ngSubmit)="onSubmit(pdfForm)">
-    <label>
-      Source:
-      <input
-        type="text"
-        formControlName="source"
-        placeholder="data url (base64)/resource utl"
-      />
-    </label>
-    <button type="submit">View Now</button>
-  </form>
-</div>
+<div class="container">
+  <div class="form-wrapper">
+    <form [formGroup]="pdfForm" (ngSubmit)="onSubmit(pdfForm)">
+      <div class="form-box">
+        <input
+          type="text"
+          formControlName="source"
+          placeholder="Data URL (base64)/Resource URI"
+        />
+        <button type="submit">View Now</button>
+      </div>
+    </form>
+  </div>
 
-<div>
-  <embed
-    *ngIf="pdfData"
-    #embedRef
-    style="
-    /* position:absolute; left: 0; top: 0; */
-    "
-    width="100%"
-    height="500px"
-    [src]="pdfData.source"
-    type="application/pdf"
-  />
+  <div class="pdf-view-wrapper">
+    <embed
+      *ngIf="pdfData"
+      #embedRef
+      style="
+  /* position:absolute; left: 0; top: 0; */
+  "
+      width="100%"
+      height="500px"
+      [src]="pdfData.source"
+      type="application/pdf"
+    />
+  </div>
 </div>

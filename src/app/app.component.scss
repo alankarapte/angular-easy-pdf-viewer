@@ -1,0 +1,51 @@
+.header {
+  color: #f1c40f;
+  text-align: center;
+  padding-block: 1rem;
+  background-color: #232f62;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-wrapper {
+  & .form-box {
+    display: flex;
+    padding: 1rem;
+    gap: 0.5em;
+
+    & input {
+      flex: 1 1 auto;
+    }
+
+    & input:focus,
+    input:hover {
+      background-color: #fffaf2;
+    }
+
+    & button {
+      background-color: #232f62;
+      color: #efe76b;
+      font-weight: 600;
+      transition: 0.2s;
+      text-decoration: underline;
+      text-underline-offset: 1px;
+      text-decoration-thickness: 1px;
+    }
+
+    & button:hover {
+      background-color: #efe76b;
+      color: #232f62;
+    }
+
+    & input,
+    button {
+      font-size: 1rem;
+      padding: 0.5em;
+      border-radius: 10px;
+      border: 0.5px solid #232f62;
+    }
+  }
+}
